@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,7 +11,11 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">) {
+async function BlogPostContent({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
 
@@ -94,5 +99,19 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
         </div>
       </section>
     </article>
+  );
+}
+
+export default function BlogPostPage({ params }: PageProps<"/blog/[slug]">) {
+  return (
+    <Suspense
+      fallback={
+        <div className="mx-auto max-w-[1400px] px-4 py-16 text-center text-sm text-muted lg:px-[68px]">
+          Loading story...
+        </div>
+      }
+    >
+      <BlogPostContent params={params} />
+    </Suspense>
   );
 }

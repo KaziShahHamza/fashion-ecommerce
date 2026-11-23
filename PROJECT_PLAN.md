@@ -28,5 +28,5 @@ Built with **Next.js 16 (App Router)**, **TypeScript**, and **Tailwind CSS v4** 
 - [x] **PR #8 (`feat/editorial-pages`, 2 commits)**
   - Commit 1: Download assets and build `/about` (`#6:726`) and `/stores` (`#10:906`)
   - Commit 2: Download assets and build `/blog` (`#10:1163`) and `/blog/[slug]` (`#10:1405`)
-- [ ] **PR #9 (`chore/qa-and-polish`, 1 commit)** — **NEXT UP**
-  - Responsive QA across breakpoints, `npm run lint` & `npm run build` verification, and Chrome DevTools visual check
+- [x] **PR #9 (`chore/qa-and-polish`, 1 commit)**
+  - Responsive QA across breakpoints, `npm run lint` & `npm run build` verification, and route smoke checks

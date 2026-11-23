@@ -13,10 +13,10 @@ Built with **Next.js 16 (App Router)**, **TypeScript**, and **Tailwind CSS v4** 
 - [x] **Base (`main`)** — `Initial commit from Create Next App`
 - [x] **PR #1 (`chore/setup-assets-and-plan`, 1 commit)** — Installed `lucide-react`, created folder structure (`src/components/*`, `src/context`, `src/data`, `src/types`, `public/images`, `public/icons`), downloaded 27 `Landing` Figma images, added `PROJECT_PLAN.md`. *(Merged)*
 - [x] **PR #2 (`docs/agent-handoff-guides`, 1 commit)** — Updated `AGENTS.md`, added `FIGMA_GUIDE.md`, and added status tracking to `PROJECT_PLAN.md`.
-- [ ] **PR #3 (`feat/theme-and-layout`, 2 commits)** — **NEXT UP**
+- [x] **PR #3 (`feat/theme-and-layout`, 2 commits)**
   - Commit 1: Configure Figma colors & typography in `src/app/globals.css` and `src/app/layout.tsx`
   - Commit 2: Build shared `Header`, `Navigation` mega-menu (`#6:368`), `Search` overlay (`#6:552`), and `Footer`
-- [ ] **PR #4 (`feat/landing-page`, 1 commit)**
+- [ ] **PR #4 (`feat/landing-page`, 1 commit)** — **NEXT UP**
   - Build `Landing` page (`src/app/page.tsx`, `#4:181`): Hero, Shop by Category, Promo Grid, Mission Banner, Favorites, Testimonial, Social Gallery, and Values
 - [ ] **PR #5 (`feat/product-listing`, 2 commits)**
   - Commit 1: Add product types (`src/types`), catalog data (`src/data`), and download `Listing` (`#10:2275`) Figma images

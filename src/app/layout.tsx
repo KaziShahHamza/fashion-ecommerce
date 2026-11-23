@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import { StoreUIProvider } from "@/context/StoreUIContext";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -26,7 +28,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${plusJakartaSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        <StoreUIProvider>{children}</StoreUIProvider>
+        <StoreUIProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </StoreUIProvider>
       </body>
     </html>
   );

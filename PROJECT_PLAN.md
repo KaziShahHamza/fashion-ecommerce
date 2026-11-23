@@ -25,8 +25,8 @@ Built with **Next.js 16 (App Router)**, **TypeScript**, and **Tailwind CSS v4** 
   - Download `Product Detail` (`#10:3394`) images and build `/product/[slug]` (`src/app/product/[slug]/page.tsx`) with gallery, color/size selectors, and Add to Cart
 - [x] **PR #7 (`feat/cart-drawer`, 1 commit)**
   - Build `CartContext` (`src/context/CartContext.tsx`) + slide-over `Cart` drawer (`#11:2105`) with add/remove, quantity controls, and live subtotal
-- [ ] **PR #8 (`feat/editorial-pages`, 2 commits)** — **NEXT UP**
+- [x] **PR #8 (`feat/editorial-pages`, 2 commits)**
   - Commit 1: Download assets and build `/about` (`#6:726`) and `/stores` (`#10:906`)
   - Commit 2: Download assets and build `/blog` (`#10:1163`) and `/blog/[slug]` (`#10:1405`)
-- [ ] **PR #9 (`chore/qa-and-polish`, 1 commit)**
+- [ ] **PR #9 (`chore/qa-and-polish`, 1 commit)** — **NEXT UP**
   - Responsive QA across breakpoints, `npm run lint` & `npm run build` verification, and Chrome DevTools visual check

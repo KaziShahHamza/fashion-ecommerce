@@ -16,9 +16,9 @@ Built with **Next.js 16 (App Router)**, **TypeScript**, and **Tailwind CSS v4** 
 - [x] **PR #3 (`feat/theme-and-layout`, 2 commits)**
   - Commit 1: Configure Figma colors & typography in `src/app/globals.css` and `src/app/layout.tsx`
   - Commit 2: Build shared `Header`, `Navigation` mega-menu (`#6:368`), `Search` overlay (`#6:552`), and `Footer`
-- [ ] **PR #4 (`feat/landing-page`, 1 commit)** — **NEXT UP**
+- [x] **PR #4 (`feat/landing-page`, 1 commit)**
   - Build `Landing` page (`src/app/page.tsx`, `#4:181`): Hero, Shop by Category, Promo Grid, Mission Banner, Favorites, Testimonial, Social Gallery, and Values
-- [ ] **PR #5 (`feat/product-listing`, 2 commits)**
+- [ ] **PR #5 (`feat/product-listing`, 2 commits)** — **NEXT UP**
   - Commit 1: Add product types (`src/types`), catalog data (`src/data`), and download `Listing` (`#10:2275`) Figma images
   - Commit 2: Build `/listing` page (`src/app/listing/page.tsx`) with category, size, color filters, and sorting
 - [ ] **PR #6 (`feat/product-detail`, 1 commit)**

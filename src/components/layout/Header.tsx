@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { useStoreUI, type MegaMenuTab } from "@/context/StoreUIContext";
+import { useCart } from "@/context/CartContext";
 import { NavigationMegaMenu } from "./NavigationMegaMenu";
 import { SearchOverlay } from "./SearchOverlay";
 
@@ -35,6 +36,7 @@ export function Header() {
     setIsMobileMenuOpen,
     setIsCartOpen,
   } = useStoreUI();
+  const { totalItems } = useCart();
 
   const toggleMegaMenu = (tab: MegaMenuTab) => {
     setIsSearchOpen(false);
@@ -146,9 +148,14 @@ export function Header() {
             type="button"
             onClick={() => setIsCartOpen(true)}
             aria-label="Open shopping cart"
-            className="p-3 text-ink transition-colors hover:text-ink-strong"
+            className="relative p-3 text-ink transition-colors hover:text-ink-strong"
           >
             <ShoppingBag className="h-4 w-4" />
+            {totalItems > 0 && (
+              <span className="absolute top-1.5 right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-ink px-1 text-[10px] font-semibold text-white">
+                {totalItems}
+              </span>
+            )}
           </button>
         </div>
       </div>

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Check, ChevronDown, RotateCcw, ShieldCheck, Star, Truck } from "lucide-react";
 import type { Product } from "@/types/product";
 import { useStoreUI } from "@/context/StoreUIContext";
+import { useCart } from "@/context/CartContext";
 import { ProductCard } from "./ProductCard";
 
 interface ProductDetailClientProps {
@@ -18,6 +19,7 @@ export function ProductDetailClient({
   relatedProducts,
 }: ProductDetailClientProps) {
   const { setIsCartOpen } = useStoreUI();
+  const { addItem } = useCart();
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState(product.sizes[1] ?? product.sizes[0]);
   const [activeImage, setActiveImage] = useState(
@@ -37,6 +39,16 @@ export function ProductDetailClient({
   };
 
   const handleAddToBag = () => {
+    addItem({
+      productId: product.id,
+      slug: product.slug,
+      name: product.name,
+      price: product.price,
+      originalPrice: product.originalPrice,
+      colorName: activeColor?.name ?? "Default",
+      size: selectedSize,
+      image: activeColor?.image ?? product.images[0],
+    });
     setAddedFeedback(true);
     setIsCartOpen(true);
     setTimeout(() => setAddedFeedback(false), 2000);

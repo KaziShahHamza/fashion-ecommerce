@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import { StoreUIProvider } from "@/context/StoreUIContext";
+import { CartProvider } from "@/context/CartContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CartDrawer } from "@/components/cart/CartDrawer";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -29,9 +31,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <StoreUIProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <CartProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <CartDrawer />
+          </CartProvider>
         </StoreUIProvider>
       </body>
     </html>
